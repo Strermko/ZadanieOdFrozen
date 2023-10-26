@@ -57,6 +57,7 @@ public class GameUI : MonoBehaviour
         ShowLabel(message);
         yield return new WaitForSeconds(0.5f);
         
+        //TODO: Remove it from here;
         GameEvents.onGameEnd.Invoke();
     }
 

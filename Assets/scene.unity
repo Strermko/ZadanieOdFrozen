@@ -578,6 +578,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 2aca3b21ccf248745a7cedc9f2b48f14, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 2aca3b21ccf248745a7cedc9f2b48f14, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -641,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 400010, guid: 2aca3b21ccf248745a7cedc9f2b48f14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 2aca3b21ccf248745a7cedc9f2b48f14, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2aca3b21ccf248745a7cedc9f2b48f14, type: 3}

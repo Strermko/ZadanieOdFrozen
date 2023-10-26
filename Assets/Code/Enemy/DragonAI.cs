@@ -7,9 +7,9 @@ public class DragonAI : MonoBehaviour
 {
     [SerializeField] int hp = 30;
 
-    [Range(0, 10)]
+    [Range(0, 20)]
     [SerializeField]
-    private int chaisingSpeed = 2;
+    private int chaisingSpeed = 5;
 
     [SerializeField] float timeBeforeBodyDestroy = 5f;
 

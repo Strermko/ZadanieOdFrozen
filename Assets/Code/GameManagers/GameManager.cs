@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Ended from GameManager");
 
         GameStats.Instance.Utilize();
-
+        
         GameEvents.onGameEnd.Invoke();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
