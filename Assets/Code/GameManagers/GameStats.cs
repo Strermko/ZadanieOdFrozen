@@ -17,8 +17,8 @@ public class GameStats
         this.EnemyCount = enemyCount;
         this.Kills = kills;
 
-        GameEvents.onDragonDeath.AddListener(EnemyWasKilled);
-        GameEvents.onDragonSpawn.AddListener(EnemyWasSpawned);
+        GameEvents.onEnemyDeath.AddListener(EnemyWasKilled);
+        GameEvents.onEnemySpawn.AddListener(EnemyWasSpawned);
     }
 
     public void Utilize()
@@ -26,8 +26,8 @@ public class GameStats
         //In case we want to reset the state
         _instance = null;
 
-        GameEvents.onDragonDeath.RemoveListener(EnemyWasKilled);
-        GameEvents.onDragonSpawn.RemoveListener(EnemyWasSpawned);
+        GameEvents.onEnemyDeath.RemoveListener(EnemyWasKilled);
+        GameEvents.onEnemySpawn.RemoveListener(EnemyWasSpawned);
     }
 
     void EnemyWasKilled()

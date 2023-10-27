@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DragonAnimator : MonoBehaviour {
 
@@ -36,6 +35,7 @@ public class DragonAnimator : MonoBehaviour {
     
     public void PlayWalkAnimation() {
         animator.SetBool(IsWalk, true);
+        currentAnimation = IsWalk;
     }
 
     public void StopWalkingAndRunningAnimations() {

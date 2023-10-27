@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -9,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float defaultLifeTime = 5f;
 
     private Rigidbody rigidBody;
+    private Transform myTransform;
     private bool isDeadly;
     readonly Color[] colors = { Color.yellow, Color.red, Color.white, Color.blue, Color.green };
 
@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     {
         SetRandomColor();
         rigidBody = GetComponent<Rigidbody>();
+        myTransform = transform;
     }
 
     public void Init(Vector3 velocity, Vector3 bulletSpawnPosition)
@@ -25,7 +26,7 @@ public class Bullet : MonoBehaviour
         rigidBody.freezeRotation = true;
         isDeadly = true;
         
-        transform.position = bulletSpawnPosition;
+        myTransform.position = bulletSpawnPosition;
         rigidBody.velocity = velocity;
         
         StartCoroutine(DisableAfterTime(defaultLifeTime));
@@ -57,8 +58,8 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBeforeDestroy);
         
-        transform.localRotation = Quaternion.identity;
-        transform.localPosition = Vector3.zero;
+        myTransform.localRotation = Quaternion.identity;
+        myTransform.localPosition = Vector3.zero;
         rigidBody.velocity = Vector3.zero;
         
         gameObject.SetActive(false);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -48,18 +43,9 @@ public class GameUI : MonoBehaviour
 
     void ShowLastMessage()
     {
-        StartCoroutine(ShowTextAneQuitCoroutine(gameOverMessage));
+        ShowLabel(gameOverMessage);
     }
-
-    IEnumerator ShowTextAneQuitCoroutine(string message)
-    {
-        yield return new WaitForSeconds(0.3f);
-        ShowLabel(message);
-        yield return new WaitForSeconds(0.5f);
-        
-        //TODO: Remove it from here;
-        GameEvents.onGameEnd.Invoke();
-    }
+    
 
     void ShowLabel(string message)
     {

@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 
     float shotDeadline;
     private Camera mainCamera;
-    private int bulletPoolSize; // Instantiate this amount of bullets on start based on bulletsPerSeconds
+    private int bulletPoolSize; // Instantiate this amount of bullets based on bulletsPerSeconds value
     private List<Bullet> bullets = new List<Bullet>();
 
     private void Start()
@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
         if (bulletPoolSize > 200 || bulletPoolSize < 10)
         {
             bulletPoolSize = 200;
-            Debug.LogError("Bullet speed is enormous, setting bullet pool to default value of 200");
+            Debug.LogError("Shooting speed is enormous, setting bullet pool to default value of 200");
         }
 
         mainCamera = Camera.main;
