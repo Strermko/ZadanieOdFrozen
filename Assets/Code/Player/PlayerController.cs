@@ -1,15 +1,29 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     [SerializeField] Weapon weapon;
 
-    void Update() {
+    enum PlayerStatus
+    {
+        Alive,
+        Dead
+    }
+
+    private PlayerStatus playerStatus = PlayerStatus.Alive;
+
+    void Update()
+    {
         if (Input.GetMouseButton(0))
             weapon.Shoot();
     }
 
     public void Died()
     {
-        GameEvents.onPlayerDeath.Invoke();
+        if (!playerStatus.Equals(PlayerStatus.Dead))
+        {
+            playerStatus = PlayerStatus.Dead;
+            GameEvents.onPlayerDeath.Invoke();
+        }
     }
 }

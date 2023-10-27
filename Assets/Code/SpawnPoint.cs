@@ -19,12 +19,12 @@ public class SpawnPoint : MonoBehaviour
     {
         _instance = this;
 
-        GameEvents.onGameStart.AddListener(SpawnPlayer);
+        GameEvents.onGameLoading.AddListener(SpawnPlayer);
     }
 
     private void OnDisable()
     {
-        GameEvents.onGameStart.RemoveListener(SpawnPlayer);
+        GameEvents.onGameLoading.RemoveListener(SpawnPlayer);
     }
 
     public void SpawnPlayer()

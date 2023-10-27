@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 5827155943284943278}
+  damage: 10
+  defaultLifeTime: 5
 --- !u!1001 &5781913887358634600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,6 +181,10 @@ PrefabInstance:
     - target: {fileID: 63977828605263110, guid: f5d5f2baa9d387043ad5e5c5090af003, type: 3}
       propertyPath: m_Name
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 63977828605263110, guid: f5d5f2baa9d387043ad5e5c5090af003, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d5f2baa9d387043ad5e5c5090af003, type: 3}
